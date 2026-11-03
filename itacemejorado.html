@@ -1,0 +1,2923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce el ITACE, sus instalaciones, oferta educativa, clubes, docentes y actividades escolares.">
+    <title>ITACE | Educación y Futuro</title>
+
+    <style>
+        :root {
+            --vino: #76002d;
+            --vino-oscuro: #38001b;
+            --rosa: #ff78ad;
+            --rosa-claro: #ffe3f0;
+            --morado: #8c52d9;
+            --morado-claro: #eee1ff;
+            --azul: #56c8f2;
+            --amarillo: #ffe16b;
+            --naranja: #ffad66;
+            --verde: #78ddb0;
+            --blanco: #fffaff;
+            --texto: #3c1830;
+            --sombra: 0 10px 28px rgba(91, 0, 43, .20);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 25px;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            background: transparent !important;
+            color: var(--texto);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+            isolation: isolate;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(135deg,
+                    rgba(45, 0, 28, .68),
+                    rgba(190, 22, 94, .46),
+                    rgba(87, 37, 157, .52)),
+                url("imagenes itace/entrada itace.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        img, video {
+            max-width: 100%;
+        }
+
+        img {
+            display: block;
+        }
+
+        section {
+            padding: 75px 7%;
+            scroll-margin-top: 25px;
+            background: transparent !important;
+        }
+
+        .contenedor {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .titulo-seccion {
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+            text-align: center;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px #fff, 0 0 12px var(--rosa),
+                0 0 25px var(--morado), 3px 4px 0 var(--vino-oscuro);
+            animation: neon 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes neon {
+            from {
+                filter: drop-shadow(0 0 2px #ff78ad);
+                transform: translateY(0);
+            }
+            to {
+                filter: drop-shadow(0 0 10px #56c8f2);
+                transform: translateY(-2px);
+            }
+        }
+
+        .subtitulo {
+            max-width: 850px;
+            margin: 0 auto 35px;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            text-shadow: 0 2px 6px #300016;
+            background: rgba(56, 0, 27, .55);
+            padding: 12px 18px;
+            border-radius: 16px;
+            border: 1px solid #ffffff80;
+        }
+
+        .linea-decorativa {
+            width: 140px;
+            height: 7px;
+            background: linear-gradient(90deg, var(--rosa),
+                var(--morado), var(--azul), var(--amarillo));
+            border-radius: 20px;
+            margin: 0 auto 30px;
+            box-shadow: 0 0 16px #ff78ad;
+        }
+
+        .boton {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--vino), var(--morado));
+            color: white;
+            text-decoration: none;
+            padding: 12px 26px;
+            border-radius: 30px;
+            font-weight: 900;
+            border: 2px solid white;
+            box-shadow: 0 0 15px #ff78ad88;
+            transition: .3s;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .boton:hover {
+            background: linear-gradient(135deg, var(--rosa), var(--amarillo));
+            color: var(--vino-oscuro);
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 0 24px #ffe16b;
+        }
+
+        header {
+            background: linear-gradient(110deg, #260012, #76002d,
+                #a32975, #6840b8);
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 5px 25px #38001b77;
+            position: relative;
+            z-index: 10;
+            border-bottom: 3px solid var(--rosa);
+        }
+
+        .logo {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 1000;
+            letter-spacing: 3px;
+            text-shadow: 0 0 7px white, 0 0 18px var(--rosa);
+            animation: logoPulso 2.7s infinite alternate;
+        }
+
+        .logo span {
+            color: var(--amarillo);
+            text-shadow: 0 0 10px var(--amarillo);
+        }
+
+        @keyframes logoPulso {
+            to {
+                transform: scale(1.035);
+                text-shadow: 0 0 15px white, 0 0 26px var(--rosa);
+            }
+        }
+
+        .encabezado-texto {
+            text-align: right;
+            font-size: .95rem;
+            font-weight: bold;
+        }
+
+        .menu-lateral {
+            position: fixed;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .boton-menu {
+            width: 58px;
+            height: 58px;
+            border: 3px solid white;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--vino), var(--morado));
+            color: white;
+            font-size: 1.7rem;
+            cursor: pointer;
+            box-shadow: 0 0 18px #ff78ad;
+            transition: .3s;
+        }
+
+        .boton-menu:hover {
+            background: linear-gradient(135deg, var(--rosa), var(--azul));
+            color: var(--vino-oscuro);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .menu-contenido {
+            position: absolute;
+            right: 68px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 250px;
+            max-height: 78vh;
+            overflow-y: auto;
+            background: linear-gradient(160deg, #fff, #fff0f8, #f1e8ff);
+            border: 3px solid var(--rosa);
+            border-radius: 20px;
+            box-shadow: var(--sombra);
+            padding: 12px;
+            display: none;
+        }
+
+        .menu-contenido.activo {
+            display: block;
+            animation: aparecerMenu .25s ease;
+        }
+
+        @keyframes aparecerMenu {
+            from {
+                opacity: 0;
+                transform: translateY(-50%) translateX(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-50%) translateX(0);
+            }
+        }
+
+        .menu-contenido a {
+            display: block;
+            padding: 9px 12px;
+            color: var(--vino);
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: .92rem;
+            font-weight: bold;
+            transition: .2s;
+            border-left: 4px solid var(--rosa);
+        }
+
+        .menu-contenido a:nth-child(3n+2) {
+            border-left-color: var(--morado);
+        }
+
+        .menu-contenido a:nth-child(3n) {
+            border-left-color: var(--azul);
+        }
+
+        .menu-contenido a:hover {
+            background: linear-gradient(90deg, var(--vino), var(--morado));
+            color: white;
+            padding-left: 20px;
+        }
+
+        .portada {
+            min-height: 600px;
+            padding: 100px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--rosa);
+        }
+
+        .portada-imagen {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+            filter: saturate(1.15);
+        }
+
+        .portada::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                rgba(38, 0, 18, .66),
+                rgba(118, 0, 45, .38),
+                rgba(102, 48, 170, .48));
+            z-index: 1;
+        }
+
+        .portada-contenido {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+            animation: aparecer 1s ease;
+        }
+
+        .portada h1 {
+            font-size: clamp(2.6rem, 7vw, 5rem);
+            line-height: 1.12;
+            margin-bottom: 22px;
+            text-shadow: 0 0 5px white, 0 0 15px var(--rosa),
+                0 0 28px var(--morado), 3px 5px 0 #38001b;
+            animation: flotarTitulo 3s ease-in-out infinite;
+        }
+
+        .portada h1 span {
+            color: var(--amarillo);
+            text-shadow: 0 0 10px var(--amarillo), 0 0 25px var(--rosa);
+        }
+
+        .portada p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: bold;
+            margin: 0 auto 30px;
+            max-width: 780px;
+            text-shadow: 0 2px 8px #000;
+            background: #38001b99;
+            border-radius: 18px;
+            padding: 15px;
+        }
+
+        @keyframes flotarTitulo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .portada .boton {
+            background: linear-gradient(135deg, var(--rosa), var(--amarillo));
+            color: var(--vino-oscuro);
+        }
+
+        .rejilla {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: linear-gradient(145deg, #fff, #fff1f8);
+            padding: 25px;
+            border-radius: 22px;
+            box-shadow: var(--sombra);
+            border: 2px solid white;
+            border-bottom: 6px solid var(--rosa);
+            transition: transform .3s, box-shadow .3s;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .tarjeta::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #ffb6d133;
+            right: -30px;
+            top: -30px;
+            pointer-events: none;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 0 3px #ff78ad66, 0 18px 35px #76002d55;
+        }
+
+        .tarjeta:nth-child(4n+2) { border-bottom-color: var(--morado); }
+        .tarjeta:nth-child(4n+3) { border-bottom-color: var(--azul); }
+        .tarjeta:nth-child(4n) { border-bottom-color: var(--naranja); }
+
+        .tarjeta h3 {
+            color: var(--vino);
+            margin-bottom: 12px;
+            font-size: 1.22rem;
+        }
+
+        .icono {
+            font-size: 2.7rem;
+            margin-bottom: 10px;
+        }
+
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .catalogo-card {
+            background: linear-gradient(145deg, #fff, #fff0f8 55%, #eee1ff);
+            border: 3px solid #fff;
+            border-radius: 25px;
+            padding: 15px;
+            box-shadow: var(--sombra);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .catalogo-card:hover {
+            transform: translateY(-8px) rotate(-.5deg);
+            box-shadow: 0 0 0 3px #ff78ad99, 0 0 25px #8c52d988;
+        }
+
+        .catalogo-marco {
+            padding: 7px;
+            border-radius: 25px 7px 25px 7px;
+            background: linear-gradient(135deg, var(--rosa),
+                var(--morado), var(--azul), var(--amarillo));
+            box-shadow: 0 0 14px #ff78ad66;
+            margin-bottom: 14px;
+        }
+
+        .catalogo-imagen {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border: 3px solid white;
+            border-radius: 20px 5px 20px 5px;
+        }
+
+        .catalogo-info h3 {
+            color: var(--vino);
+            font-size: 1.15rem;
+            margin: 8px 0;
+        }
+
+        .catalogo-info p { font-size: .93rem; }
+
+        .catalogo-etiqueta {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--vino), var(--morado));
+            color: #fff;
+            padding: 5px 13px;
+            border-radius: 25px;
+            font-size: .78rem;
+            font-weight: 900;
+            margin-top: 10px;
+        }
+
+        .catalogo-adorno {
+            color: var(--morado);
+            letter-spacing: 6px;
+            margin-top: 8px;
+        }
+
+        .historia-contenido {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: center;
+            gap: 40px;
+        }
+
+        .historia-imagen img {
+            width: 100%;
+            max-height: 430px;
+            object-fit: cover;
+            border-radius: 25px 80px 25px 80px;
+            border: 6px solid white;
+            box-shadow: 0 0 0 4px var(--rosa), 0 10px 25px #8c52d977;
+        }
+
+        .historia-texto {
+            background: #ffffffee;
+            padding: 25px;
+            border-radius: 22px;
+            border: 2px solid white;
+            box-shadow: var(--sombra);
+        }
+
+        .historia-texto h3 {
+            color: var(--morado);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .historia-texto p { margin-bottom: 15px; }
+
+        .imagen-decorada {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border: 5px solid white;
+            outline: 2px solid var(--rosa);
+            box-shadow: 0 7px 18px #76002d33;
+            transition: transform .35s, filter .35s, box-shadow .35s;
+            cursor: zoom-in;
+        }
+
+        .imagen-decorada:hover {
+            transform: scale(1.055) rotate(1deg);
+            filter: saturate(1.25) brightness(1.06);
+            box-shadow: 0 0 0 5px var(--morado), 0 0 25px var(--rosa);
+        }
+
+        .figura-1 { border-radius: 50%; }
+        .figura-2 { border-radius: 39px 5px 39px 5px; }
+        .figura-3 { border-radius: 5px 45px 5px 45px; }
+        .figura-4 { border-radius: 50px 50px 5px 5px; }
+        .figura-5 { border-radius: 5px 50px 50px 5px; }
+        .figura-6 {
+            border-radius: 29px;
+            clip-path: polygon(10% 0, 90% 0, 100% 15%, 100% 85%,
+                90% 100%, 10% 100%, 0 85%, 0 15%);
+        }
+        .figura-7 { border-radius: 50% 10% 50% 10%; }
+        .figura-8 { border-radius: 10px 60px 10px 60px; }
+
+        .instalacion { text-align: center; }
+        .instalacion .imagen-decorada { margin-bottom: 18px; }
+        .instalacion p { font-size: .95rem; }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .galeria-elemento {
+            text-align: center;
+            background: linear-gradient(145deg, #fff, #fff0f8);
+            padding: 14px;
+            border-radius: 22px;
+            box-shadow: var(--sombra);
+            overflow: hidden;
+            border: 2px solid white;
+            transition: transform .3s;
+        }
+
+        .galeria-elemento:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 22px #ff78ad99;
+        }
+
+        .galeria-elemento:nth-child(4n+2) {
+            background: linear-gradient(145deg, #fff, #e9ddff);
+        }
+        .galeria-elemento:nth-child(4n+3) {
+            background: linear-gradient(145deg, #fff, #def7ff);
+        }
+        .galeria-elemento:nth-child(4n) {
+            background: linear-gradient(145deg, #fff, #fff1c9);
+        }
+
+        .galeria-elemento .imagen-decorada {
+            height: 190px;
+            margin-bottom: 12px;
+        }
+
+        .galeria-elemento h3 {
+            color: var(--vino);
+            font-size: 1rem;
+        }
+        .galeria-elemento p { font-size: .9rem; }
+
+        .club { text-align: center; }
+        .club .icono { font-size: 3rem; }
+
+        .videos-contenedor {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .video-tarjeta {
+            background: linear-gradient(145deg, #fff, #f5e9ff);
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: var(--sombra);
+            border: 3px solid white;
+            border-bottom: 7px solid var(--morado);
+            transition: transform .3s;
+            height: 100%;
+        }
+
+        .video-tarjeta:nth-child(2) {
+            background: linear-gradient(145deg, #fff, #ffe7f0);
+            border-bottom-color: var(--rosa);
+        }
+
+        .video-tarjeta:hover { transform: translateY(-5px); }
+
+        .video-tarjeta h3 {
+            color: var(--vino);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .video-tarjeta video {
+            display: block;
+            width: 100%;
+            border-radius: 16px;
+            background: #1d0710;
+            aspect-ratio: 16 / 9;
+            border: 3px solid white;
+        }
+
+        .video-tarjeta p {
+            margin-top: 12px;
+            font-size: .95rem;
+        }
+
+        .mision-vision {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .mision-vision .tarjeta:first-child {
+            border-top: 6px solid var(--azul);
+        }
+
+        .mision-vision .tarjeta:last-child {
+            border-top: 6px solid var(--morado);
+        }
+
+        .foto-mision-vision {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border: 5px solid white;
+            border-radius: 18px;
+            margin-bottom: 17px;
+            box-shadow: 0 0 0 3px #ff78ad88, 0 8px 18px #38001b33;
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .mision-vision .tarjeta:hover .foto-mision-vision {
+            transform: scale(1.025);
+            box-shadow: 0 0 0 4px var(--morado), 0 10px 25px #8c52d966;
+        }
+
+        .inscripciones {
+            background: linear-gradient(120deg,
+                rgba(56, 0, 27, .85),
+                rgba(118, 0, 45, .82),
+                rgba(155, 60, 196, .78)) !important;
+            color: white;
+            text-align: center;
+            border-block: 3px solid var(--rosa);
+        }
+
+        .inscripciones .titulo-seccion { color: white; }
+        .inscripciones .subtitulo { color: #ffe5f1; }
+
+        .inscripciones .boton {
+            background: linear-gradient(135deg, var(--amarillo), var(--rosa));
+            color: var(--vino-oscuro);
+        }
+
+        .contacto { text-align: center; }
+
+        .contacto p {
+            margin: 10px 0;
+            color: white;
+            text-shadow: 0 2px 5px #38001b;
+            font-weight: bold;
+        }
+
+        .contacto a {
+            color: var(--amarillo);
+            font-weight: bold;
+        }
+
+        footer {
+            background: linear-gradient(110deg, #300016, #76002d, #6032a5);
+            color: white;
+            text-align: center;
+            padding: 30px 7%;
+            border-top: 5px solid var(--rosa);
+        }
+
+        footer p { margin: 5px 0; }
+        footer span { color: var(--amarillo); }
+
+        .boton-subir {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--vino), var(--morado));
+            color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--sombra);
+            z-index: 900;
+            display: none;
+            transition: .3s;
+        }
+
+        .boton-subir.visible { display: block; }
+
+        .boton-subir:hover {
+            background: linear-gradient(135deg, var(--rosa), var(--amarillo));
+            color: var(--vino);
+            transform: translateY(-4px);
+        }
+
+        .docentes-panel {
+            background: linear-gradient(145deg, #fff, #fff0f8);
+            border: 3px solid white;
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: var(--sombra);
+        }
+
+        .docentes-filtros {
+            display: grid;
+            grid-template-columns: 2fr 1fr auto;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .docentes-filtros input,
+        .docentes-filtros select {
+            width: 100%;
+            padding: 13px 15px;
+            border: 2px solid #e5b1d1;
+            border-radius: 14px;
+            font: inherit;
+            background: white;
+            color: var(--vino-oscuro);
+            outline: none;
+        }
+
+        .docentes-filtros input:focus,
+        .docentes-filtros select:focus {
+            border-color: var(--morado);
+            box-shadow: 0 0 0 3px #8c52d933;
+        }
+
+        .filtros-categorias {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0 25px;
+        }
+
+        .filtro-docente {
+            border: 2px solid var(--rosa);
+            background: white;
+            color: var(--vino);
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        .filtro-docente:hover,
+        .filtro-docente.activo {
+            background: linear-gradient(120deg, var(--vino), var(--morado));
+            color: white;
+            border-color: white;
+            box-shadow: 0 0 15px #ff78ad99;
+            transform: translateY(-2px);
+        }
+
+        .lista-docentes {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .docente-card {
+            position: relative;
+            background: linear-gradient(145deg, #fff, #fff0f8 48%, #eee1ff);
+            border: 3px solid transparent;
+            border-radius: 25px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 7px 18px #38001b25, inset 0 0 0 2px #fff;
+            transition: transform .3s, box-shadow .3s, border-color .3s;
+            isolation: isolate;
+            height: 100%;
+        }
+
+        .docente-card::before {
+            content: "";
+            position: absolute;
+            inset: 6px;
+            border: 2px solid #ff9acb;
+            border-radius: 18px;
+            pointer-events: none;
+            z-index: 2;
+            transition: inset .3s, border-color .3s, box-shadow .3s;
+        }
+
+        .docente-card::after {
+            content: "✦  ✧  ✦";
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            color: #fff5a8;
+            text-shadow: 0 0 5px #a32975, 0 0 10px #8c52d9;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .docente-card:hover {
+            transform: translateY(-8px);
+            border-color: #fff;
+            box-shadow: 0 0 0 3px #ff78ad99, 0 0 20px #8c52d988,
+                0 15px 30px #38001b44;
+        }
+
+        .docente-card:hover::before {
+            inset: 4px;
+            border-color: #ffe16b;
+            box-shadow: inset 0 0 12px #ff78ad55, 0 0 10px #ff78ad66;
+        }
+
+        .docente-card img {
+            position: relative;
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border: 5px solid white;
+            border-bottom: 5px solid #ff78ad;
+            outline: 2px solid #8c52d9;
+            outline-offset: -8px;
+            cursor: zoom-in;
+            transition: transform .35s, filter .35s, box-shadow .35s;
+            z-index: 1;
+        }
+
+        .docente-card img:hover {
+            filter: saturate(1.3) brightness(1.08);
+            transform: scale(1.055);
+            box-shadow: inset 0 0 0 5px #ffe16b, 0 0 22px #ff78ad;
+            outline-color: #ffe16b;
+        }
+
+        .docente-info {
+            position: relative;
+            z-index: 1;
+            padding: 17px 16px 18px;
+            background: linear-gradient(180deg, #fff9fd, #f8edff);
+        }
+
+        .docente-info::before {
+            content: "✦ ✧ ✦";
+            display: block;
+            color: #8c52d9;
+            letter-spacing: 8px;
+            font-size: .8rem;
+            margin-bottom: 5px;
+        }
+
+        .docente-info h3 {
+            font-size: 1.03rem;
+            color: var(--vino);
+            margin: 7px 0 8px;
+        }
+
+        .docente-info p {
+            font-size: .88rem;
+            line-height: 1.5;
+            margin: 5px 0;
+        }
+
+        .docente-info strong { color: #8c3279; }
+
+        .etiqueta-docente {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--rosa-claro), var(--morado-claro));
+            color: var(--vino);
+            font-size: .76rem;
+            font-weight: 900;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            border: 1px solid #e9a1cd;
+            box-shadow: 0 2px 8px #8c52d922;
+        }
+
+        .sin-resultados {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 25px;
+            color: var(--vino);
+            font-weight: bold;
+        }
+
+        .nota-docentes {
+            font-size: .9rem;
+            text-align: center;
+            margin-top: 18px;
+            color: #68415c;
+        }
+
+        .contador-docentes {
+            text-align: center;
+            font-weight: bold;
+            color: var(--vino);
+            margin: 10px 0 16px;
+        }
+
+        .visor-imagen {
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 0, 18, .92);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .visor-imagen.abierto {
+            display: flex;
+            animation: fadeVisor .2s ease;
+        }
+
+        .visor-imagen img {
+            max-width: min(92vw, 1250px);
+            max-height: 84vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border: 5px solid white;
+            border-radius: 18px;
+            box-shadow: 0 0 0 4px var(--rosa), 0 0 35px var(--morado);
+            cursor: default;
+        }
+
+        .visor-cerrar {
+            position: absolute;
+            right: 22px;
+            top: 16px;
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            background: var(--vino);
+            color: white;
+            font-size: 1.7rem;
+            cursor: pointer;
+        }
+
+        .visor-pie {
+            position: absolute;
+            bottom: 12px;
+            left: 10px;
+            right: 10px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 2px 5px black;
+        }
+
+        @keyframes fadeVisor {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 1000px) {
+            .lista-docentes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .galeria { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 760px) {
+            .lista-docentes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .docentes-filtros { grid-template-columns: 1fr; }
+            .historia-contenido { gap: 25px; }
+        }
+
+        @media (max-width: 650px) {
+            section { padding: 55px 5%; }
+
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .encabezado-texto { text-align: center; }
+
+            .portada {
+                min-height: 490px;
+                padding: 75px 6%;
+            }
+
+            .historia-contenido,
+            .videos-contenedor,
+            .mision-vision {
+                grid-template-columns: 1fr;
+            }
+
+            .galeria {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 13px;
+            }
+
+            .galeria-elemento { padding: 9px; }
+            .galeria-elemento .imagen-decorada { height: 145px; }
+            .galeria-elemento h3 { font-size: .9rem; }
+
+            .catalogo-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 13px;
+            }
+
+            .catalogo-card { padding: 10px; }
+            .catalogo-imagen { height: 135px; }
+            .catalogo-info h3 { font-size: 1rem; }
+
+            .menu-lateral { right: 10px; }
+
+            .boton-menu {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+
+            .menu-contenido {
+                right: 58px;
+                width: min(235px, calc(100vw - 85px));
+            }
+
+            .boton-subir {
+                right: 12px;
+                bottom: 12px;
+            }
+
+            .historia-imagen img { max-height: 320px; }
+
+            .lista-docentes {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .docente-card img { height: 150px; }
+            .docente-info { padding: 10px; }
+            .docente-info h3 { font-size: .94rem; }
+            .docente-info p { font-size: .8rem; }
+
+            .visor-imagen { padding: 15px; }
+            .visor-imagen img { max-width: 95vw; max-height: 78vh; }
+
+            .visor-cerrar {
+                right: 12px;
+                top: 12px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .galeria,
+            .lista-docentes,
+            .catalogo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .galeria-elemento .imagen-decorada { height: 210px; }
+            .catalogo-imagen { height: 200px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="inicio">
+        <div class="logo">ITA<span>CE</span> 🌸</div>
+        <div class="encabezado-texto">
+            Instituto Tamaulipeco de Capacitación para el Empleo<br>
+            Educación, preparación y futuro ✨
+        </div>
+    </header>
+
+    <div class="menu-lateral">
+        <button class="boton-menu" id="botonMenu" type="button"
+            aria-label="Abrir menú" aria-expanded="false"
+            aria-controls="menuContenido" onclick="alternarMenu()">☰</button>
+
+        <nav class="menu-contenido" id="menuContenido" aria-label="Menú principal">
+            <a href="#inicio" onclick="cerrarMenu()">🏠 Inicio</a>
+            <a href="#nosotros" onclick="cerrarMenu()">💗 Nosotros</a>
+            <a href="#historia" onclick="cerrarMenu()">📖 Historia</a>
+            <a href="#carreras" onclick="cerrarMenu()">🎓 Carreras</a>
+            <a href="#instalaciones" onclick="cerrarMenu()">🏫 Instalaciones</a>
+            <a href="#galeria" onclick="cerrarMenu()">🖼️ Galería</a>
+            <a href="#clubes" onclick="cerrarMenu()">🎨 Clubes</a>
+            <a href="#videos" onclick="cerrarMenu()">🎬 Videos</a>
+            <a href="#docentes" onclick="cerrarMenu()">👩‍🏫 Docentes</a>
+            <a href="#himnos" onclick="cerrarMenu()">🎵 Himnos y audio</a>
+            <a href="#capacitacion" onclick="cerrarMenu()">💡 Capacitación</a>
+            <a href="#mision-vision" onclick="cerrarMenu()">⭐ Misión y visión</a>
+            <a href="#inscripciones" onclick="cerrarMenu()">📝 Inscripciones</a>
+            <a href="#contacto" onclick="cerrarMenu()">💌 Contacto</a>
+        </nav>
+    </div>
+
+    <section class="portada">
+        <img class="portada-imagen"
+            src="imagenes itace/entrada itace.jpeg"
+            alt="Entrada del ITACE">
+
+        <div class="portada-contenido">
+            <h1>¡Bienvenidos al <span>ITACE!</span> 🌸</h1>
+            <p>
+                Educación, preparación y futuro. Descubre las instalaciones,
+                las actividades, los docentes y las oportunidades que ofrece
+                nuestra comunidad escolar.
+            </p>
+            <a href="#nosotros" class="boton">✨ Conoce nuestra institución</a>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">💗 Conoce el ITACE</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                El ITACE es una institución orientada a la formación y capacitación
+                para el trabajo, donde los conocimientos y las habilidades prácticas
+                pueden abrir nuevas oportunidades.
+            </p>
+
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <div class="icono">🎓</div>
+                    <h3>Educación</h3>
+                    <p>Aprender nuevos conocimientos que contribuyan al desarrollo académico y personal.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🛠️</div>
+                    <h3>Capacitación</h3>
+                    <p>Desarrollar habilidades prácticas para enfrentar diferentes retos del ámbito laboral.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🌟</div>
+                    <h3>Superación</h3>
+                    <p>Impulsar el crecimiento personal, la responsabilidad y la preparación para el futuro.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">📖 Historia del ITACE</h2>
+            <div class="linea-decorativa"></div>
+
+            <div class="historia-contenido">
+                <div class="historia-imagen">
+                    <img src="imagenes itace/itace logo salon.jpeg"
+                        alt="Imagen del ITACE"
+                        class="imagen-decorada figura-2" loading="lazy">
+                </div>
+
+                <div class="historia-texto">
+                    <h3>Una institución para aprender y crecer</h3>
+                    <p>
+                        El Instituto Tamaulipeco de Capacitación para el Empleo tiene
+                        como propósito contribuir a la preparación de las personas
+                        mediante la capacitación y el desarrollo de conocimientos y habilidades.
+                    </p>
+                    <p>
+                        A través de sus actividades educativas, busca favorecer el
+                        aprendizaje práctico, la superación personal y la preparación
+                        para diferentes oportunidades laborales.
+                    </p>
+                    <p>
+                        La historia de cada plantel también se construye con las
+                        experiencias de sus estudiantes, docentes y personal,
+                        quienes forman parte de su comunidad. 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="oferta">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">🎓 Oferta educativa</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                La capacitación permite adquirir conocimientos y desarrollar
+                habilidades útiles para la vida cotidiana y el mundo laboral.
+            </p>
+
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <div class="icono">💻</div>
+                    <h3>Informática</h3>
+                    <p>Uso de herramientas digitales, programas informáticos y recursos tecnológicos.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🔧</div>
+                    <h3>Área técnica</h3>
+                    <p>Aprendizaje de procedimientos, herramientas y conocimientos técnicos.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">📋</div>
+                    <h3>Administración</h3>
+                    <p>Organización de actividades, documentación y procesos administrativos.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🤝</div>
+                    <h3>Habilidades laborales</h3>
+                    <p>Trabajo en equipo, responsabilidad, comunicación y colaboración.</p>
+                </article>
+            </div>
+
+            <p class="subtitulo" style="margin-top: 25px; margin-bottom: 0;">
+                Consulta con tu plantel las especialidades, cursos y opciones de capacitación disponibles.
+            </p>
+        </div>
+    </section>
+
+    <section id="carreras">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">💻 Carreras y especialidades</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                Explora algunas áreas de formación. Agrega tus fotografías en las
+                rutas indicadas para que cada tarjeta muestre la imagen correspondiente.
+                La oferta puede variar según el plantel.
+            </p>
+
+            <div class="catalogo-grid">
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/programacion.jpeg"
+                            alt="Programación" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>💻 Programación</h3>
+                        <p>Desarrollo de programas, páginas web y soluciones digitales.</p>
+                        <span class="catalogo-etiqueta">Tecnología</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/inteligencia artificial.jpeg"
+                            alt="Inteligencia Artificial" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🤖 Inteligencia Artificial</h3>
+                        <p>Exploración de sistemas inteligentes, datos y automatización.</p>
+                        <span class="catalogo-etiqueta">Innovación</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/diseño grafico.jpeg"
+                            alt="Diseño gráfico digital" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🎨 Diseño gráfico digital</h3>
+                        <p>Creación visual, composición y comunicación gráfica.</p>
+                        <span class="catalogo-etiqueta">Creatividad</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/electronica.jpeg"
+                            alt="Electrónica" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🔌 Electrónica</h3>
+                        <p>Conocimiento de circuitos, componentes y dispositivos electrónicos.</p>
+                        <span class="catalogo-etiqueta">Tecnología</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/automotriz.jpeg"
+                            alt="Mantenimiento automotriz" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🚗 Mantenimiento automotriz</h3>
+                        <p>Revisión, diagnóstico y mantenimiento de vehículos.</p>
+                        <span class="catalogo-etiqueta">Práctica técnica</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/mantenimientoindustrial.jpeg"
+                            alt="Mantenimiento industrial" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>⚙️ Mantenimiento industrial</h3>
+                        <p>Cuidado y funcionamiento de equipos y sistemas industriales.</p>
+                        <span class="catalogo-etiqueta">Industria</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/logistica.jpeg"
+                            alt="Logística" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>📦 Logística</h3>
+                        <p>Organización de inventarios, distribución y movimiento de productos.</p>
+                        <span class="catalogo-etiqueta">Organización</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/ciberseguridad.jpeg"
+                            alt="Ciberseguridad" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🔐 Ciberseguridad</h3>
+                        <p>Protección de sistemas, información y recursos digitales.</p>
+                        <span class="catalogo-etiqueta">Seguridad digital</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="instalaciones">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">🏫 Nuestras instalaciones</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                Conoce algunos de los espacios que forman parte de la comunidad escolar. 💖
+            </p>
+
+            <div class="rejilla">
+                <article class="tarjeta instalacion">
+                    <img src="imagenes itace/salonesjpeg.jpeg"
+                        alt="Instalaciones generales del ITACE"
+                        class="imagen-decorada figura-3" loading="lazy">
+                    <h3>Instalaciones generales</h3>
+                    <p>Espacios que forman parte de la vida diaria de la comunidad estudiantil.</p>
+                </article>
+
+                <article class="tarjeta instalacion">
+                    <img src="imagenes itace/baños.jpeg" alt="Baños del plantel"
+                        class="imagen-decorada figura-4" loading="lazy">
+                    <h3>Baños</h3>
+                    <p>Áreas de servicio para estudiantes, docentes y personal.</p>
+                </article>
+
+                <article class="tarjeta instalacion">
+                    <img src="imagenes itace/prefectura.jpeg" alt="Área de prefectura"
+                        class="imagen-decorada figura-6" loading="lazy">
+                    <h3>Prefectura</h3>
+                    <p>Área de apoyo para la organización y convivencia escolar.</p>
+                </article>
+
+                <article class="tarjeta instalacion">
+                    <img src="imagenes itace/foro.jpeg" alt="Foro del plantel"
+                        class="imagen-decorada figura-8" loading="lazy">
+                    <h3>Foro</h3>
+                    <p>Lugar para presentaciones, reuniones y actividades escolares.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="salones">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">📚 Espacios de aprendizaje</h2>
+            <div class="linea-decorativa"></div>
+
+            <div class="historia-contenido">
+                <div class="historia-texto">
+                    <h3>Aprender y compartir conocimientos</h3>
+                    <p>
+                        Los espacios de aprendizaje permiten compartir conocimientos,
+                        resolver actividades, participar en equipo y desarrollar proyectos.
+                    </p>
+                    <p>
+                        El aprendizaje se complementa con la práctica, la participación
+                        y el uso responsable de los recursos disponibles en la escuela.
+                    </p>
+                </div>
+
+                <div class="historia-imagen">
+                    <img src="imagenes itace/pasillo largo.jpeg"
+                        alt="Espacios escolares"
+                        class="imagen-decorada figura-1" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">🤝 Servicios escolares</h2>
+            <div class="linea-decorativa"></div>
+
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <div class="icono">📚</div>
+                    <h3>Apoyo académico</h3>
+                    <p>Actividades que favorecen el aprendizaje y el desarrollo de conocimientos.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🗂️</div>
+                    <h3>Atención escolar</h3>
+                    <p>Orientación para resolver dudas relacionadas con trámites y actividades escolares.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">👥</div>
+                    <h3>Convivencia</h3>
+                    <p>Participación en actividades que promueven el respeto y el trabajo colaborativo.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="foro">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">🎤 Foro y actividades escolares</h2>
+            <div class="linea-decorativa"></div>
+
+            <div class="historia-contenido">
+                <div class="historia-texto">
+                    <h3>Un espacio para compartir talentos</h3>
+                    <p>
+                        Los espacios destinados a eventos pueden utilizarse para
+                        presentaciones, reuniones, exposiciones y actividades de la comunidad escolar.
+                    </p>
+                    <p>
+                        Estas experiencias ayudan a fortalecer la expresión, la confianza,
+                        la creatividad y el trabajo en equipo. 🌈
+                    </p>
+                </div>
+
+                <div class="historia-imagen">
+                    <img src="imagenes itace/foro.jpeg"
+                        alt="Foro para actividades escolares"
+                        class="imagen-decorada figura-3" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">🖼️ Galería del ITACE</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                Pulsa cualquier fotografía para verla en grande.
+                ¡Explora los espacios de nuestra escuela! ✨
+            </p>
+
+            <div class="galeria">
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/entrada itace.jpeg" alt="Entrada del ITACE"
+                        class="imagen-decorada figura-1" loading="lazy">
+                    <h3>1. Entrada</h3>
+                    <p>Bienvenidos al plantel.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/pasillo cafeteria.jpeg" alt="Pasillo de la cafetería"
+                        class="imagen-decorada figura-2" loading="lazy">
+                    <h3>2. Pasillo y cafetería</h3>
+                    <p>Parte de nuestra identidad.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/plaza estudiantil.jpeg" alt="Plaza estudiantil"
+                        class="imagen-decorada figura-3" loading="lazy">
+                    <h3>3. Plaza estudiantil</h3>
+                    <p>Espacios de nuestra escuela.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/pasillo largo.jpeg" alt="Pasillo del plantel"
+                        class="imagen-decorada figura-4" loading="lazy">
+                    <h3>4. Pasillos</h3>
+                    <p>Áreas de circulación.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/salonesjpeg.jpeg" alt="Salones escolares"
+                        class="imagen-decorada figura-5" loading="lazy">
+                    <h3>5. Salones</h3>
+                    <p>Espacios para aprender.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/servicios escolares.jpeg" alt="Servicios escolares"
+                        class="imagen-decorada figura-6" loading="lazy">
+                    <h3>6. Servicios escolares</h3>
+                    <p>Organización escolar.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/explanada.jpeg" alt="Explanada escolar"
+                        class="imagen-decorada figura-7" loading="lazy">
+                    <h3>7. Explanada</h3>
+                    <p>Eventos y reuniones.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/fuera salones.jpeg" alt="Exterior de los salones"
+                        class="imagen-decorada figura-8" loading="lazy">
+                    <h3>8. Exterior de salones</h3>
+                    <p>Convivencia estudiantil.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/taller pintura.jpeg" alt="Taller de capacitación"
+                        class="imagen-decorada figura-2" loading="lazy">
+                    <h3>9. Taller</h3>
+                    <p>Desarrollo de habilidades.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/equipo.jpeg" alt="Equipo escolar"
+                        class="imagen-decorada figura-3" loading="lazy">
+                    <h3>10. Equipo</h3>
+                    <p>Trabajo en comunidad.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/arboles.jpeg" alt="Áreas arboladas"
+                        class="imagen-decorada figura-4" loading="lazy">
+                    <h3>11. Áreas verdes</h3>
+                    <p>Cuidado del entorno.</p>
+                </article>
+
+                <article class="galeria-elemento">
+                    <img src="imagenes itace/mas estudiantes.jpeg" alt="Estudiantes del plantel"
+                        class="imagen-decorada figura-5" loading="lazy">
+                    <h3>12. Estudiantes</h3>
+                    <p>La comunidad del ITACE.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="clubes">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">🌟 Clubes y actividades escolares</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                Descubre los clubes donde puedes desarrollar tus talentos,
+                aprender cosas nuevas y convivir. La disponibilidad puede variar según el plantel.
+            </p>
+
+            <div class="catalogo-grid">
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/robotica.jpeg"
+                            alt="Club de robótica" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🤖 Robótica</h3>
+                        <p>Diseño, armado y programación de proyectos tecnológicos.</p>
+                        <span class="catalogo-etiqueta">Tecnología</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/premilitar.jpeg"
+                            alt="Club premilitar" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🎖️ Premilitar</h3>
+                        <p>Disciplina, responsabilidad, coordinación y trabajo en equipo.</p>
+                        <span class="catalogo-etiqueta">Disciplina</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/banda dibujo.jpeg"
+                            alt="Banda de guerra" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🥁 Banda de guerra</h3>
+                        <p>Ritmo, coordinación y participación en ceremonias escolares.</p>
+                        <span class="catalogo-etiqueta">Música</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/dibujo taller.jpeg"
+                            alt="Club de dibujo" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🖌️ Dibujo</h3>
+                        <p>Expresión artística, técnicas de ilustración y creatividad.</p>
+                        <span class="catalogo-etiqueta">Arte</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/oratoria.jpeg"
+                            alt="Club de oratoria" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🎤 Oratoria</h3>
+                        <p>Comunicación oral, expresión de ideas y confianza al hablar.</p>
+                        <span class="catalogo-etiqueta">Comunicación</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/rondalla.jpeg"
+                            alt="Rondalla" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>🎸 Rondalla</h3>
+                        <p>Interpretación musical, canto y práctica en conjunto.</p>
+                        <span class="catalogo-etiqueta">Música</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/danza.jpeg"
+                            alt="Club de danza" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>💃 Danza</h3>
+                        <p>Movimiento, expresión corporal, ritmo y coordinación.</p>
+                        <span class="catalogo-etiqueta">Expresión</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-marco">
+                        <img class="catalogo-imagen" src="imagenes itace/ajedrez.jpeg"
+                            alt="Club de ajedrez" loading="lazy">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3>♟️ Ajedrez</h3>
+                        <p>Pensamiento estratégico, concentración y resolución de problemas.</p>
+                        <span class="catalogo-etiqueta">Estrategia</span>
+                        <div class="catalogo-adorno">✦ ✧ ✦</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+        <section id="videos">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">🎬 Videos del ITACE</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                Mira estos videos para conocer más sobre las instalaciones,
+                las actividades y la vida escolar. 💖
+            </p>
+
+            <div class="videos-contenedor">
+                <article class="video-tarjeta">
+                    <h3>🎬 Video 1: Conoce el ITACE</h3>
+                    <video controls preload="metadata">
+                        <source src="videos itace/itace video.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                    <p>Un recorrido audiovisual para presentar la institución y sus espacios.</p>
+                </article>
+
+                <article class="video-tarjeta">
+                    <h3>🎥 Video 2: Actividades escolares</h3>
+                    <video controls preload="metadata">
+                        <source src="videos itace/banda.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                    <p>Imágenes y momentos de las actividades de la comunidad escolar.</p>
+                </article>
+
+                <article class="video-tarjeta">
+                    <h3>💡 Video 3: Capacitación</h3>
+                    <video controls preload="metadata">
+                        <source src="videos itace/recorridoitace.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                    <p>Agrega aquí un video sobre cursos, talleres o capacitación del ITACE.</p>
+                </article>
+
+                <article class="video-tarjeta">
+                    <h3>🛠️ Video 4: Talleres y prácticas</h3>
+                    <video controls preload="metadata">
+                        <source src="videos itace/videoitace5.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                    <p>Un espacio para mostrar prácticas, proyectos y actividades de aprendizaje.</p>
+                </article>
+
+                <article class="video-tarjeta">
+                    <h3>✨ Video 5: Experiencias estudiantiles</h3>
+                    <video controls preload="metadata">
+                        <source src="videos itace/videoitace4.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                    <p>Comparte experiencias, eventos y momentos de la comunidad escolar.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIRECTORIO INTERACTIVO DE DOCENTES -->
+    <section id="docentes">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">👩‍🏫 Directorio de docentes</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                Encuentra a tus maestros por categoría o busca por nombre,
+                materia o club. Cada tarjeta muestra sus materias, semestres
+                y formación profesional.
+            </p>
+
+            <div class="docentes-panel">
+                <div class="filtros-categorias" role="group"
+                    aria-label="Filtrar docentes por categoría">
+                    <button class="filtro-docente activo" type="button"
+                        data-categoria="todos">🌟 Todos</button>
+                    <button class="filtro-docente" type="button"
+                        data-categoria="modulo">📘 Maestros de módulo</button>
+                    <button class="filtro-docente" type="button"
+                        data-categoria="club">🎨 Maestros de clubes</button>
+                    <button class="filtro-docente" type="button"
+                        data-categoria="materia">✏️ Otras materias</button>
+                </div>
+
+                <div class="docentes-filtros">
+                    <input type="search" id="buscarDocente"
+                        placeholder="🔎 Buscar por nombre, materia o club..."
+                        aria-label="Buscar docente">
+
+                    <select id="filtroMateria" aria-label="Filtrar por materia">
+                        <option value="todas">Todas las áreas</option>
+                        <option value="modulo">Módulos</option>
+                        <option value="club">Clubes</option>
+                        <option value="materia">Otras materias</option>
+                    </select>
+
+                    <button class="boton" type="button" id="limpiarDocentes">
+                        Limpiar filtros
+                    </button>
+                </div>
+
+                <p class="contador-docentes" id="contadorDocentes" aria-live="polite"></p>
+
+                <!-- FOTOGRAFÍAS EDITABLES DIRECTAMENTE EN HTML -->
+                <div class="lista-docentes" id="listaDocentes">
+
+                    <article class="docente-card"
+                        data-categoria="modulo"
+                        data-categorias="modulo">
+                        <img src="imagenes itace/maestro 1.jpeg"
+                            alt="Fotografía de José López Vázquez"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de módulo</span>
+                            <h3>José López Vázquez</h3>
+                            <p><strong>Materias y áreas:</strong> Mantenimiento Industrial.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestres 3° y 5°, turno vespertino.</p>
+                            <p><strong>Formación profesional:</strong> Docente de módulo de Mantenimiento Industrial.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="modulo materia"
+                        data-categorias="modulo materia">
+                        <img src="imagenes itace/maestro2.jpeg"
+                            alt="Fotografía de Felipe Hernández González"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Módulo y otras materias</span>
+                            <h3>Felipe Hernández González</h3>
+                            <p><strong>Materias y áreas:</strong> Electrónica, Semiconductores y Microelectrónica, Lengua y Comunicación y Conciencia Histórica.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestres 3° y 5°.</p>
+                            <p><strong>Formación profesional:</strong> Cuenta con una Ingeniería y Licenciatura en Electrónica.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="modulo materia"
+                        data-categorias="modulo materia">
+                        <img src="imagenes itace/maestra brenda.jpeg"
+                            alt="Fotografía de Brenda Itzel Herrera García"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Módulo y otras materias</span>
+                            <h3>Brenda Itzel Herrera García</h3>
+                            <p><strong>Materias y áreas:</strong> Informática, Cultura Digital e Inteligencia Artificial.</p>
+                            <p><strong>Semestres y actividades:</strong> Materias de informática y cultura digital.</p>
+                            <p><strong>Formación profesional:</strong> Técnica en Informática, Ingeniera en Sistemas Computacionales y Maestría en Educación.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/maestro4.jpeg"
+                            alt="Fotografía de Erik Ramírez Solís"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Erik Ramírez Solís</h3>
+                            <p><strong>Materias y áreas:</strong> Matemáticas y Pensamiento Matemático.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestres 1°, 3° y 5°.</p>
+                            <p><strong>Formación profesional:</strong> Licenciatura en Ingeniería Electromecánica y Maestría en Educación.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/maestro lerma.jpeg"
+                            alt="Fotografía de Luis Enrique Lerma Martínez"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Luis Enrique Lerma Martínez</h3>
+                            <p><strong>Materias y áreas:</strong> Lengua y Comunicación y Conciencia Histórica.</p>
+                            <p><strong>Semestres y actividades:</strong> Lengua y Comunicación 1 y 3; Conciencia Histórica II en 5° semestre.</p>
+                            <p><strong>Formación profesional:</strong> Ingeniero en Sistemas, formación en Pedagogía e Ingeniería Petrolera y Diplomado en Competencias Docentes.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="modulo club"
+                        data-categorias="modulo club">
+                        <img src="imagenes itace/maestro pablo.jpeg"
+                            alt="Fotografía de Juan Pablo Torres Adame"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Módulo y club</span>
+                            <h3>Juan Pablo Torres Adame</h3>
+                            <p><strong>Materias y áreas:</strong> Programación, Cultura Digital y Club de Robótica.</p>
+                            <p><strong>Semestres y actividades:</strong> Programación y Cultura Digital; cursos de Excel los sábados.</p>
+                            <p><strong>Formación profesional:</strong> Licenciatura en Información Administrativa y Maestría en Ciencias de la Enseñanza.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="modulo"
+                        data-categorias="modulo">
+                        <img src="imagenes itace/maestro7.jpeg"
+                            alt="Fotografía de Mario Alonso Santoyo Arroyo"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de módulo</span>
+                            <h3>Mario Alonso Santoyo Arroyo</h3>
+                            <p><strong>Materias y áreas:</strong> Mantenimiento Industrial.</p>
+                            <p><strong>Semestres y actividades:</strong> Módulos profesionales de Mantenimiento Industrial 2 y 4.</p>
+                            <p><strong>Formación profesional:</strong> Maestría en Educación, carrera técnica en Refrigeración y Climatización e Ingeniería Industrial.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/maestraliliana.jpeg"
+                            alt="Fotografía de Liliana Rosas Pacheco"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Liliana Rosas Pacheco</h3>
+                            <p><strong>Materias y áreas:</strong> Humanidades y Lengua y Comunicación.</p>
+                            <p><strong>Semestres y actividades:</strong> Conciencia Histórica, Formación Socioemocional, Lengua y Comunicación y Pensamiento Filosófico en Humanidades.</p>
+                            <p><strong>Formación profesional:</strong> Licenciatura en Pedagogía, Maestría en Docencia y Doctorado en Educación.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/maestro ulises.jpeg"
+                            alt="Fotografía de Ulises Solís Rieboles"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Ulises Solís Rieboles</h3>
+                            <p><strong>Materias y áreas:</strong> Ciencias Naturales.</p>
+                            <p><strong>Semestres y actividades:</strong> Ciencias Naturales 1, 3 y 5.</p>
+                            <p><strong>Formación profesional:</strong> Químico Farmacéutico Biólogo, Maestría en Análisis Clínicos y Educación; actualmente estudia un Doctorado en Educación.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/maestro10.jpeg"
+                            alt="Fotografía de Rafael Villasana"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Rafael Villasana</h3>
+                            <p><strong>Materias y áreas:</strong> Historia, Educación Física, Cultura Digital y Lengua y Comunicación.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestres 1°, 3° y 5°.</p>
+                            <p><strong>Formación profesional:</strong> Especialista en Historia y Deportes.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/maestraerika.jpeg"
+                            alt="Fotografía de Erika Aide Pérez Obrego"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Erika Aide Pérez Obrego</h3>
+                            <p><strong>Materias y áreas:</strong> Ciencias Naturales y Humanidades.</p>
+                            <p><strong>Semestres y actividades:</strong> Materias de Ciencias Naturales y Humanidades.</p>
+                            <p><strong>Formación profesional:</strong> Ingeniería Industrial y de Sistemas y Maestría en Educación.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/maestralaura.jpeg"
+                            alt="Fotografía de Laura Esmeralda Heredia Blanco"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Laura Esmeralda Heredia Blanco</h3>
+                            <p><strong>Materias y áreas:</strong> Ciencias Naturales.</p>
+                            <p><strong>Semestres y actividades:</strong> Ciencias Naturales 1, 3 y 5.</p>
+                            <p><strong>Formación profesional:</strong> Especialidad en Física y Química; su carrera principal es Biología.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/trini.jpeg"
+                            alt="Fotografía de Trinidad Hernandez Barrera"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Trinidad Hernandez Barrera</h3>
+                            <p><strong>Materias y áreas:</strong> Ciencias Naturales, Experimentales y Tecnología.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestres 1°, 3° y 5°.</p>
+                            <p><strong>Formación profesional:</strong> Biólogo.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="club"
+                        data-categorias="club">
+                        <img src="imagenes itace/aroon.jpeg"
+                            alt="Fotografía de Aaron Espinoza Gallegos"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de club</span>
+                            <h3>Aaron Espinoza Gallegos</h3>
+                            <p><strong>Materias y áreas:</strong> Club de Banda de Guerra.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestre 5°.</p>
+                            <p><strong>Formación profesional:</strong> Licenciado en Ciencias de la Educación.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/karla.jpeg"
+                            alt="Fotografía de Karla Valeria Moran Lerma"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Karla Valeria Moran Lerma</h3>
+                            <p><strong>Materias y áreas:</strong> Pensamiento Filosófico, Ciencias Sociales y Cultura Digital.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestres 1° y 3°.</p>
+                            <p><strong>Formación profesional:</strong> Cuenta con Maestría.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="modulo materia"
+                        data-categorias="modulo materia">
+                        <img src="imagenes itace/limon.jpeg"
+                            alt="Fotografía de Benjamín Limón Martínez"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Módulo y otras materias</span>
+                            <h3>Benjamín Limón Martínez</h3>
+                            <p><strong>Materias y áreas:</strong> Programación, Inteligencia Artificial y Cultura Digital.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestres 1°, 3° y 5°.</p>
+                            <p><strong>Formación profesional:</strong> Ingeniería en Administración en Productividad y Calidad y Maestría en Educación.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="club"
+                        data-categorias="club">
+                        <img src="imagenes itace/isidro.jpeg"
+                            alt="Fotografía de Isidro de León Flores"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de club</span>
+                            <h3>Isidro de León Flores</h3>
+                            <p><strong>Materias y áreas:</strong> Club de Educación Física Premilitar.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestres 1°, 3° y 5°.</p>
+                            <p><strong>Formación profesional:</strong> Licenciado en Psicopedagogía y Pedagogía.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="club materia"
+                        data-categorias="club materia">
+                        <img src="imagenes itace/walter.jpeg"
+                            alt="Fotografía de Walter Alan Barrera Cerda"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Club y otras materias</span>
+                            <h3>Walter Alan Barrera Cerda</h3>
+                            <p><strong>Materias y áreas:</strong> Inglés y Club de Rondalla.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestre 3°.</p>
+                            <p><strong>Formación profesional:</strong> Ingeniería Industrial y Administración.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/samuel.jpeg"
+                            alt="Fotografía de Samuel Gonzales de la Fuente"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Samuel Gonzales de la Fuente</h3>
+                            <p><strong>Materias y áreas:</strong> Pensamiento Filosófico, Ciencias Sociales I y Estudios Literarios.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestres 1°, 3° y 5°.</p>
+                            <p><strong>Formación profesional:</strong> Licenciatura en Administración de Empresas y Carrera Técnica en Ebanistería.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/mildred.jpeg"
+                            alt="Fotografía de Mildred Yasmín Reyes Norberto"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Mildred Yasmín Reyes Norberto</h3>
+                            <p><strong>Materias y áreas:</strong> Temas Selectos de Matemáticas.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestre 5°.</p>
+                            <p><strong>Formación profesional:</strong> Ingeniería en Química y Maestría en Docencia.</p>
+                        </div>
+                    </article>
+
+                    <article class="docente-card"
+                        data-categoria="materia"
+                        data-categorias="materia">
+                        <img src="imagenes itace/bertha.jpeg"
+                            alt="Fotografía de Bertha Alicia Zapata Aldape"
+                            loading="lazy">
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">Maestro/a de otras materias</span>
+                            <h3>Bertha Alicia Zapata Aldape</h3>
+                            <p><strong>Materias y áreas:</strong> Temas Selectos de Matemáticas.</p>
+                            <p><strong>Semestres y actividades:</strong> Semestres 1° y 3°.</p>
+                            <p><strong>Formación profesional:</strong> Doctorado.</p>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="nota-docentes">
+                    Las categorías se asignan de acuerdo con las materias,
+                    módulos y clubes indicados para cada docente. Puedes cambiar
+                    las fotografías modificando directamente el atributo src de cada imagen.
+                </p>
+            </div>
+        </div>
+    </section>
+        <section id="himnos">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">🎵 Himnos y audio escolar</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                Escucha los audios escolares. Los reproductores no comienzan
+                automáticamente; puedes iniciarlos cuando quieras.
+            </p>
+
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <div class="icono">🎼</div>
+                    <h3>Himno de Tamaulipas</h3>
+                    <p>Audio del himno de nuestro estado.</p>
+                    <audio controls preload="none" style="width: 100%; margin-top: 12px;">
+                        <source src="audios/tamaulipas himno .mp3.mpeg" type="audio/mpeg">
+                        Tu navegador no puede reproducir este audio.
+                    </audio>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🎶</div>
+                    <h3>Himno del ITACE</h3>
+                    <p>Audio representativo de nuestra institución.</p>
+                    <audio controls preload="none" style="width: 100%; margin-top: 12px;">
+                        <source src="audios/itacehimno.mp3.mpeg" type="audio/mpeg">
+                        Tu navegador no puede reproducir este audio.
+                    </audio>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="capacitacion">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">💡 Capacitación para el futuro</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                La capacitación es una oportunidad para desarrollar conocimientos,
+                practicar nuevas habilidades y prepararse para los retos del mundo laboral.
+            </p>
+
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <div class="icono">🧠</div>
+                    <h3>Aprender</h3>
+                    <p>Adquirir conocimientos y comprender nuevos conceptos.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🛠️</div>
+                    <h3>Practicar</h3>
+                    <p>Aplicar lo aprendido mediante actividades y ejercicios prácticos.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🚀</div>
+                    <h3>Avanzar</h3>
+                    <p>Utilizar las habilidades adquiridas para continuar creciendo.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="mision-vision">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">⭐ Misión y visión</h2>
+            <div class="linea-decorativa"></div>
+
+            <div class="mision-vision">
+                <article class="tarjeta">
+                    <img src="imagenes itace/mision.jpeg"
+                        alt="Equipo y comunidad escolar"
+                        class="foto-mision-vision" loading="lazy">
+
+                    <div class="icono">🎯</div>
+                    <h3>Misión</h3>
+                    <p>
+                        Contribuir a la formación y capacitación de las personas
+                        mediante el desarrollo de conocimientos y habilidades
+                        que favorezcan su crecimiento personal y laboral.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes itace/vision.jpeg"
+                        alt="Entrada de las instalaciones del ITACE"
+                        class="foto-mision-vision" loading="lazy">
+
+                    <div class="icono">🔭</div>
+                    <h3>Visión</h3>
+                    <p>
+                        Ser una institución reconocida por impulsar el aprendizaje,
+                        la preparación técnica, la responsabilidad y las oportunidades
+                        de desarrollo de su comunidad.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="inscripciones" id="inscripciones">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">¡Forma parte del ITACE! 💖</h2>
+            <div class="linea-decorativa"></div>
+
+            <p class="subtitulo">
+                Acércate al plantel para conocer los requisitos, las fechas de
+                inscripción, los cursos disponibles y la información oficial
+                para nuevos estudiantes.
+            </p>
+
+            <a href="#contacto" class="boton">📝 Más información</a>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="contenedor contacto">
+            <h2 class="titulo-seccion">💌 Contacto e información</h2>
+            <div class="linea-decorativa"></div>
+
+            <p>
+                Para conocer los horarios, requisitos y servicios,
+                consulta los canales oficiales de tu plantel.
+            </p>
+            <p>
+                <strong>Institución:</strong>
+                Instituto Tamaulipeco de Capacitación para el Empleo
+            </p>
+            <p>
+                <strong>Información:</strong>
+                Solicita orientación directamente en tu plantel.
+            </p>
+            <p>
+                <strong>Ubicación:</strong>
+                Consulta la dirección oficial de tu plantel ITACE.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>🌸 ITACE | Educación y Futuro 🌸</strong></p>
+        <p>Aprender hoy para construir nuevas oportunidades mañana. ✨</p>
+        <p><span>© 2026</span> | Página informativa escolar.</p>
+    </footer>
+
+    <button class="boton-subir" id="botonSubir"
+        type="button" aria-label="Volver al inicio"
+        title="Volver al inicio" onclick="subirAlInicio()">↑</button>
+
+    <div class="visor-imagen" id="visorImagen"
+        role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+        <button class="visor-cerrar" id="cerrarVisor"
+            type="button" aria-label="Cerrar imagen">×</button>
+        <img id="imagenAmpliada" src="" alt="Imagen ampliada">
+        <p class="visor-pie" id="pieImagen"></p>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const SUPABASE_URL = "PEGA_AQUI_LA_URL_DE_TU_PROYECTO";
+        const SUPABASE_ANON_KEY = "PEGA_AQUI_TU_CLAVE_PUBLICA_ANON";
+
+        const supabaseListo = Boolean(
+            window.supabase &&
+            SUPABASE_URL.startsWith("https://") &&
+            SUPABASE_ANON_KEY !== "PEGA_AQUI_TU_CLAVE_PUBLICA_ANON" &&
+            SUPABASE_ANON_KEY.trim() !== ""
+        );
+
+        const supabaseITACE = supabaseListo
+            ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+            : null;
+
+        const docentesIniciales = [
+            {
+                id: "docente-1",
+                nombre: "José López Vázquez",
+                categoria: "modulo",
+                area: "Mantenimiento Industrial",
+                horario: "Semestres 3° y 5°, turno vespertino",
+                informacion: "Docente de módulo de Mantenimiento Industrial.",
+                foto: "imagenes itace/maestro 1.jpeg"
+            },
+            {
+                id: "docente-2",
+                nombre: "Felipe Hernández González",
+                categoria: "modulo materia",
+                area: "Electrónica, Semiconductores y Microelectrónica, Lengua y Comunicación y Conciencia Histórica",
+                horario: "Semestres 3° y 5°",
+                informacion: "Cuenta con una Ingeniería y Licenciatura en Electrónica.",
+                foto: "imagenes itace/maestro2.jpeg"
+            },
+            {
+                id: "docente-3",
+                nombre: "Brenda Itzel Herrera García",
+                categoria: "modulo materia",
+                area: "Informática, Cultura Digital e Inteligencia Artificial",
+                horario: "Materias de informática y cultura digital",
+                informacion: "Técnica en Informática, Ingeniera en Sistemas Computacionales y Maestría en Educación.",
+                foto: "imagenes itace/maestra brenda.jpeg"
+            },
+            {
+                id: "docente-4",
+                nombre: "Erik Ramírez Solís",
+                categoria: "materia",
+                area: "Matemáticas y Pensamiento Matemático",
+                horario: "Semestres 1°, 3° y 5°",
+                informacion: "Licenciatura en Ingeniería Electromecánica y Maestría en Educación.",
+                foto: "imagenes itace/maestro4.jpeg"
+            },
+            {
+                id: "docente-5",
+                nombre: "Luis Enrique Lerma Martínez",
+                categoria: "materia",
+                area: "Lengua y Comunicación y Conciencia Histórica",
+                horario: "Lengua y Comunicación 1 y 3; Conciencia Histórica II en 5° semestre",
+                informacion: "Ingeniero en Sistemas, formación en Pedagogía e Ingeniería Petrolera y Diplomado en Competencias Docentes.",
+                foto: "imagenes itace/maestro lerma.jpeg"
+            },
+            {
+                id: "docente-6",
+                nombre: "Juan Pablo Torres Adame",
+                categoria: "modulo club",
+                area: "Programación, Cultura Digital y Club de Robótica",
+                horario: "Programación y Cultura Digital; cursos de Excel los sábados",
+                informacion: "Licenciatura en Información Administrativa y Maestría en Ciencias de la Enseñanza.",
+                foto: "imagenes itace/maestro pablo.jpeg"
+            },
+            {
+                id: "docente-7",
+                nombre: "Mario Alonso Santoyo Arroyo",
+                categoria: "modulo",
+                area: "Mantenimiento Industrial",
+                horario: "Módulos profesionales de Mantenimiento Industrial 2 y 4",
+                informacion: "Maestría en Educación, carrera técnica en Refrigeración y Climatización e Ingeniería Industrial.",
+                foto: "imagenes itace/maestro7.jpeg"
+            },
+            {
+                id: "docente-8",
+                nombre: "Liliana Rosas Pacheco",
+                categoria: "materia",
+                area: "Humanidades y Lengua y Comunicación",
+                horario: "Conciencia Histórica, Formación Socioemocional, Lengua y Comunicación y Pensamiento Filosófico en Humanidades",
+                informacion: "Licenciatura en Pedagogía, Maestría en Docencia y Doctorado en Educación.",
+                foto: "imagenes itace/maestraliliana.jpeg"
+            },
+            {
+                id: "docente-9",
+                nombre: "Ulises Solís Rieboles",
+                categoria: "materia",
+                area: "Ciencias Naturales",
+                horario: "Ciencias Naturales 1, 3 y 5",
+                informacion: "Químico Farmacéutico Biólogo, Maestría en Análisis Clínicos y Educación; actualmente estudia un Doctorado en Educación.",
+                foto: "imagenes itace/maestro ulises.jpeg"
+            },
+            {
+                id: "docente-10",
+                nombre: "Rafael Villasana",
+                categoria: "materia",
+                area: "Historia, Educación Física, Cultura Digital y Lengua y Comunicación",
+                horario: "Semestres 1°, 3° y 5°",
+                informacion: "Especialista en Historia y Deportes.",
+                foto: "imagenes itace/maestro10.jpeg"
+            },
+            {
+                id: "docente-11",
+                nombre: "Erika Aide Pérez Obrego",
+                categoria: "materia",
+                area: "Ciencias Naturales y Humanidades",
+                horario: "Materias de Ciencias Naturales y Humanidades",
+                informacion: "Ingeniería Industrial y de Sistemas y Maestría en Educación.",
+                foto: "imagenes itace/maestraerika.jpeg"
+            },
+            {
+                id: "docente-12",
+                nombre: "Laura Esmeralda Heredia Blanco",
+                categoria: "materia",
+                area: "Ciencias Naturales",
+                horario: "Ciencias Naturales 1, 3 y 5",
+                informacion: "Especialidad en Física y Química; su carrera principal es Biología.",
+                foto: "imagenes itace/maestralaura.jpeg"
+            },
+            {
+                id: "docente-13",
+                nombre: "Trinidad Hernandez Barrera",
+                categoria: "materia",
+                area: "Ciencias Naturales, Experimentales y Tecnología",
+                horario: "Semestres 1°, 3° y 5°",
+                informacion: "Biólogo.",
+                foto: "imagenes itace/docentes/docente13.jpg"
+            },
+            {
+                id: "docente-14",
+                nombre: "Aaron Espinoza Gallegos",
+                categoria: "club",
+                area: "Club de Banda de Guerra",
+                horario: "Semestre 5°",
+                informacion: "Licenciado en Ciencias de la Educación.",
+                foto: "imagenes itace/docentes/docente14.jpg"
+            },
+            {
+                id: "docente-15",
+                nombre: "Karla Valeria Moran Lerma",
+                categoria: "materia",
+                area: "Pensamiento Filosófico, Ciencias Sociales y Cultura Digital",
+                horario: "Semestres 1° y 3°",
+                informacion: "Cuenta con Maestría.",
+                foto: "imagenes itace/docentes/docente15.jpg"
+            },
+            {
+                id: "docente-16",
+                nombre: "Benjamín Limón Martínez",
+                categoria: "modulo materia",
+                area: "Programación, Inteligencia Artificial y Cultura Digital",
+                horario: "Semestres 1°, 3° y 5°",
+                informacion: "Ingeniería en Administración en Productividad y Calidad y Maestría en Educación.",
+                foto: "imagenes itace/docentes/docente16.jpg"
+            },
+            {
+                id: "docente-17",
+                nombre: "Isidro de León Flores",
+                categoria: "club",
+                area: "Club de Educación Física Premilitar",
+                horario: "Semestres 1°, 3° y 5°",
+                informacion: "Licenciado en Psicopedagogía y Pedagogía.",
+                foto: "imagenes itace/docentes/docente17.jpg"
+            },
+            {
+                id: "docente-18",
+                nombre: "Walter Alan Barrera Cerda",
+                categoria: "club materia",
+                area: "Inglés y Club de Rondalla",
+                horario: "Semestre 3°",
+                informacion: "Ingeniería Industrial y Administración.",
+                foto: "imagenes itace/docentes/docente18.jpg"
+            },
+            {
+                id: "docente-19",
+                nombre: "Samuel Gonzales de la Fuente",
+                categoria: "materia",
+                area: "Pensamiento Filosófico, Ciencias Sociales I y Estudios Literarios",
+                horario: "Semestres 1°, 3° y 5°",
+                informacion: "Licenciatura en Administración de Empresas y Carrera Técnica en Ebanistería.",
+                foto: "imagenes itace/docentes/docente19.jpg"
+            },
+            {
+                id: "docente-20",
+                nombre: "Mildred Yasmín Reyes Norberto",
+                categoria: "materia",
+                area: "Temas Selectos de Matemáticas",
+                horario: "Semestre 5°",
+                informacion: "Ingeniería en Química y Maestría en Docencia.",
+                foto: "imagenes itace/docentes/docente20.jpg"
+            },
+            {
+                id: "docente-21",
+                nombre: "Bertha Alicia Zapata Aldape",
+                categoria: "materia",
+                area: "Temas Selectos de Matemáticas",
+                horario: "Semestres 1° y 3°",
+                informacion: "Doctorado.",
+                foto: "imagenes itace/docentes/docentes21.jpg"
+            }
+        ];
+
+        const botonMenu = document.getElementById("botonMenu");
+        const menuContenido = document.getElementById("menuContenido");
+        const botonSubir = document.getElementById("botonSubir");
+        const visor = document.getElementById("visorImagen");
+        const imagenAmpliada = document.getElementById("imagenAmpliada");
+        const pieImagen = document.getElementById("pieImagen");
+
+        function alternarMenu() {
+            const abierto = menuContenido.classList.toggle("activo");
+
+            botonMenu.setAttribute("aria-expanded", String(abierto));
+            botonMenu.setAttribute(
+                "aria-label",
+                abierto ? "Cerrar menú" : "Abrir menú"
+            );
+
+            botonMenu.innerHTML = abierto ? "✕" : "☰";
+        }
+
+        function cerrarMenu() {
+            menuContenido.classList.remove("activo");
+            botonMenu.setAttribute("aria-expanded", "false");
+            botonMenu.setAttribute("aria-label", "Abrir menú");
+            botonMenu.innerHTML = "☰";
+        }
+
+        document.addEventListener("click", function(evento) {
+            if (
+                !menuContenido.contains(evento.target) &&
+                !botonMenu.contains(evento.target)
+            ) {
+                cerrarMenu();
+            }
+        });
+
+        window.addEventListener("scroll", function() {
+            botonSubir.classList.toggle("visible", window.scrollY > 300);
+        });
+
+        function subirAlInicio() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+        function abrirVisor(img) {
+            if (!img || !img.src) return;
+
+            imagenAmpliada.src = img.src;
+            imagenAmpliada.alt = img.alt || "Imagen ampliada";
+            pieImagen.textContent = img.alt || "";
+
+            visor.classList.add("abierto");
+            document.body.style.overflow = "hidden";
+
+            document.getElementById("cerrarVisor").focus();
+        }
+
+        function cerrarVisor() {
+            visor.classList.remove("abierto");
+            imagenAmpliada.src = "";
+            document.body.style.overflow = "";
+        }
+
+        document.addEventListener("click", function(evento) {
+            const imagen = evento.target.closest("img");
+
+            if (
+                imagen &&
+                imagen.id !== "imagenAmpliada" &&
+                !visor.contains(imagen)
+            ) {
+                abrirVisor(imagen);
+            }
+        });
+
+        document.getElementById("cerrarVisor").addEventListener(
+            "click",
+            cerrarVisor
+        );
+
+        visor.addEventListener("click", function(evento) {
+            if (evento.target === visor) {
+                cerrarVisor();
+            }
+        });
+
+        document.addEventListener("keydown", function(evento) {
+            if (evento.key === "Escape") {
+                cerrarMenu();
+                cerrarVisor();
+            }
+        });
+
+        const listaDocentes = document.getElementById("listaDocentes");
+        const botonesCategoria = Array.from(
+            document.querySelectorAll(".filtro-docente")
+        );
+
+        const buscarDocente = document.getElementById("buscarDocente");
+        const filtroMateria = document.getElementById("filtroMateria");
+        const limpiarDocentes = document.getElementById("limpiarDocentes");
+        const contadorDocentes = document.getElementById("contadorDocentes");
+
+        let categoriaActiva = "todos";
+
+        function normalizar(texto) {
+            return (texto || "")
+                .toLocaleLowerCase("es")
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        }
+
+        function escaparHTML(valor) {
+            return String(valor ?? "").replace(/[&<>"']/g, function(caracter) {
+                return {
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#39;"
+                }[caracter];
+            });
+        }
+
+        function obtenerCategorias(categoria) {
+            return String(categoria || "materia")
+                .toLowerCase()
+                .split(/[\s,]+/)
+                .filter(function(cat) {
+                    return ["modulo", "club", "materia"].includes(cat);
+                });
+        }
+
+        function obtenerEtiqueta(categorias) {
+            if (categorias.includes("modulo") && categorias.includes("club")) {
+                return "Módulo y club";
+            }
+
+            if (categorias.includes("modulo") && categorias.includes("materia")) {
+                return "Módulo y otras materias";
+            }
+
+            if (categorias.includes("club") && categorias.includes("materia")) {
+                return "Club y otras materias";
+            }
+
+            if (categorias.includes("modulo")) {
+                return "Maestro/a de módulo";
+            }
+
+            if (categorias.includes("club")) {
+                return "Maestro/a de club";
+            }
+
+            return "Maestro/a de otras materias";
+        }
+
+        function obtenerFotoDocente(docente) {
+            return docente.foto ||
+                "imagenes itace/docentes/docente-generico.jpg";
+        }
+
+        function dibujarDocentes(registros) {
+            listaDocentes.innerHTML = registros.map(function(docente) {
+                const categorias = obtenerCategorias(docente.categoria);
+                const categoriasTexto = categorias.join(" ");
+
+                const foto = escaparHTML(obtenerFotoDocente(docente));
+
+                return `
+                    <article class="docente-card"
+                        data-categoria="${escaparHTML(categoriasTexto)}"
+                        data-categorias="${escaparHTML(categoriasTexto)}">
+
+                        <img
+                            src="${foto}"
+                            alt="Fotografía de ${escaparHTML(docente.nombre)}"
+                            loading="lazy"
+                            onerror="this.onerror=null;this.src='imagenes itace/docentes/docente-generico.jpg';"
+                        >
+
+                        <div class="docente-info">
+                            <span class="etiqueta-docente">
+                                ${obtenerEtiqueta(categorias)}
+                            </span>
+
+                            <h3>${escaparHTML(docente.nombre)}</h3>
+
+                            <p>
+                                <strong>Materias y áreas:</strong>
+                                ${escaparHTML(docente.area)}
+                            </p>
+
+                            <p>
+                                <strong>Semestres y actividades:</strong>
+                                ${escaparHTML(docente.horario)}
+                            </p>
+
+                            <p>
+                                <strong>Formación profesional:</strong>
+                                ${escaparHTML(docente.informacion)}
+                            </p>
+                        </div>
+                    </article>
+                `;
+            }).join("");
+
+            filtrarDocentes();
+        }
+
+        function filtrarDocentes() {
+            const tarjetas = Array.from(
+                document.querySelectorAll(".docente-card")
+            );
+
+            const consulta = normalizar(buscarDocente.value.trim());
+            const categoriaSelect = filtroMateria.value;
+
+            let visibles = 0;
+
+            tarjetas.forEach(function(tarjeta) {
+                const categorias = obtenerCategorias(
+                    tarjeta.dataset.categorias ||
+                    tarjeta.dataset.categoria
+                );
+
+                const texto = normalizar(tarjeta.textContent);
+
+                const coincideCategoria =
+                    categoriaActiva === "todos" ||
+                    categorias.includes(categoriaActiva);
+
+                const coincideSelect =
+                    categoriaSelect === "todas" ||
+                    categorias.includes(categoriaSelect);
+
+                const coincideTexto = texto.includes(consulta);
+
+                const mostrar =
+                    coincideCategoria &&
+                    coincideSelect &&
+                    coincideTexto;
+
+                tarjeta.hidden = !mostrar;
+
+                if (mostrar) {
+                    visibles++;
+                }
+            });
+
+            contadorDocentes.textContent = visibles === 1
+                ? "Se muestra 1 docente"
+                : "Se muestran " + visibles + " docentes";
+
+            let aviso = document.getElementById("sinDocentes");
+
+            if (visibles === 0) {
+                if (!aviso) {
+                    aviso = document.createElement("p");
+                    aviso.id = "sinDocentes";
+                    aviso.className = "sin-resultados";
+                    aviso.textContent =
+                        "No se encontraron docentes con esos filtros. Prueba otra búsqueda.";
+
+                    listaDocentes.appendChild(aviso);
+                }
+            } else if (aviso) {
+                aviso.remove();
+            }
+        }
+
+        botonesCategoria.forEach(function(boton) {
+            boton.addEventListener("click", function() {
+                categoriaActiva = boton.dataset.categoria;
+
+                botonesCategoria.forEach(function(otroBoton) {
+                    otroBoton.classList.toggle(
+                        "activo",
+                        otroBoton === boton
+                    );
+                });
+
+                filtroMateria.value = "todas";
+                filtrarDocentes();
+            });
+        });
+
+        buscarDocente.addEventListener("input", filtrarDocentes);
+
+        filtroMateria.addEventListener("change", function() {
+            categoriaActiva = "todos";
+
+            botonesCategoria.forEach(function(boton) {
+                boton.classList.toggle(
+                    "activo",
+                    boton.dataset.categoria === "todos"
+                );
+            });
+
+            filtrarDocentes();
+        });
+
+        limpiarDocentes.addEventListener("click", function() {
+            buscarDocente.value = "";
+            filtroMateria.value = "todas";
+            categoriaActiva = "todos";
+
+            botonesCategoria.forEach(function(boton) {
+                boton.classList.toggle(
+                    "activo",
+                    boton.dataset.categoria === "todos"
+                );
+            });
+
+            filtrarDocentes();
+        });
+
+        /* Las tarjetas ya están escritas directamente en HTML. */
+        filtrarDocentes();
+
+        document.querySelectorAll("video").forEach(function(video) {
+            video.addEventListener("play", function() {
+                document.querySelectorAll("audio").forEach(function(audio) {
+                    audio.pause();
+                });
+            });
+        });
+
+        async function sincronizarDocentesEnLinea() {
+            if (!supabaseListo) {
+                console.info(
+                    "Configura SUPABASE_URL y SUPABASE_ANON_KEY para activar la base de datos en línea."
+                );
+                return;
+            }
+
+            try {
+                const { error: errorGuardado } = await supabaseITACE
+                    .from("itace_docentes")
+                    .upsert(docentesIniciales, {
+                        onConflict: "id"
+                    });
+
+                if (errorGuardado) {
+                    throw errorGuardado;
+                }
+
+                const { data, error } = await supabaseITACE
+                    .from("itace_docentes")
+                    .select("id,nombre,categoria,area,horario,informacion,foto")
+                    .order("id");
+
+                if (error) {
+                    throw error;
+                }
+
+                if (data && data.length > 0) {
+                    console.info(
+                        "Datos de docentes consultados. Las tarjetas visibles se conservan desde el HTML."
+                    );
+                }
+
+            } catch (error) {
+                console.error(
+                    "No se pudo sincronizar el directorio con Supabase:",
+                    error.message
+                );
+
+                const aviso = document.createElement("p");
+                aviso.className = "nota-docentes";
+                aviso.textContent =
+                    "La base de datos en línea no está disponible. Se muestran los datos de esta página.";
+
+                document.querySelector(".docentes-panel").appendChild(aviso);
+            }
+        }
+
+        sincronizarDocentesEnLinea();
+
+    </script>
+</body>
+</html>
